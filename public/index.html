@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Generator</title>
+</head>
+<body>
+    <h2>YAML File Generator</h2>
+    <form id="yamlForm">
+        <div>
+            <span class="button">MQTT</span>
+            <ul >
+                <li>
+                    <label for="host">Host:</label>
+                    <input type="text" id="host" name="host">
+                </li>
+                <li>
+                    <label for="user">User:</label>
+                    <input type="text" id="user" name="user">
+                </li>
+                <li>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </li>
+            </ul>
+        </div>
+        <div class="select-menu">
+            <span class="button">Detectors</span>
+            <ul >
+                <li >
+                    <label for="type">Type:</label>
+                    <input type="text" id="type" name="type">
+                </li>
+                <li>
+                    <label for="device">Device:</label>
+                    <input type="text" id="device" name="device">
+                </li>
+            </ul>
+        </div>
+        <div class="select-menu">
+            <span class="button">Record</span>
+            <ul>
+                <li>
+                    <label for="enabled">Enabled:</label>
+                    <input type="checkbox" id="enabled" name="enabled" checked>
+                </li>
+                <li >
+                    <label for="retain_days">Retain Days:</label>
+                    <input type="number" id="retain_days" name="retain_days" min="0" max="100">
+                </li>
+                <li>
+                    <label for="default_re">Default:</label>
+                    <input type="number" id="default_re" name="default_re" min="0" max="100">
+                </li>
+            </ul>
+        </div>
+    <!-- Retain Section -->
+        <div class="select-menu">
+            <span >Retain</span>
+            <ul >
+                <li >
+                    <label for="enabled_snap">Enabled:</label>
+                    <input type="checkbox" id="enabled_snap" name="enabled_snap">
+                </li>
+                <li>
+                    <label for="bounding_box">Bounding Box:</label>
+                    <input type="checkbox" id="bounding_box" name="bounding_box" checked>
+                </li>
+                <li >
+                    <label for="crop">Crop:</label>
+                    <input type="checkbox" id="crop" name="crop" checked>
+                </li>
+                <li>
+                    <label for="default_snap">Default:</label>
+                    <input type="number" id="default_snap" name="default_snap" min="0" max="100">
+                </li>
+            </ul>
+        </div>
+    <!-- Cameras Section -->
+        <div class="select-menu">
+            <span class="button">Cameras</span>
+            <ul class="options" id="camerasContainer">
+            <!-- Dynamic camera details go here -->
+            </ul>
+        </div>
+    <!-- Add Camera Button -->
+        <button type="button" onclick="addCamera()">Add Camera</button>
+    <!-- Generate YAML Button -->
+        <button type="button" onclick="generateYAML()">Generate YAML</button>
+    </form>
+
+        <script src="https://unpkg.com/js-yaml/dist/js-yaml.min.js"></script>
+        <script src="script.js"></script>
+        <script src="Yaml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+mqtt:
+  host: ''
+  user: ''
+  password: ''
+  topic_prefix: deepcept
+detectors:
+  type: ''
+  device: ''
+record:
+  enabled: true
+  retain_days: ''
+  default_re: ''
+snapshots:
+  enabled: false
+  bounding_box: true
+  crop: true
+  default_snap: ''
+cameras:
+  '':
+    ffmpeg:
+      inputs:
+        - path: ''
+          input_args: '-re -stream_loop -1 -fflags +genpts'
+        - path: ''
+        - path: ''
+          roles: []
+    detect:
+      width: ''
+      height: ''
+      fps: ''
+    object:
+      track: []
+    rtmp:
+      enabled: false
